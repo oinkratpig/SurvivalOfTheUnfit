@@ -109,7 +109,7 @@ namespace SurvivalOfTheUnfit
         /* Pressing enter within the Act text box will result in the same thing as pressing the button. */
         private void textBoxInput_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 buttonAct_Click(sender, EventArgs.Empty);
                 e.Handled = true;

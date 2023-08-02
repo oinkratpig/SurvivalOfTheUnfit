@@ -67,31 +67,31 @@
             // 
             treeViewActions.Location = new Point(12, 27);
             treeViewActions.Name = "treeViewActions";
-            treeViewActions.Size = new Size(135, 337);
+            treeViewActions.Size = new Size(138, 337);
             treeViewActions.TabIndex = 1;
             // 
             // pictureBoxScene
             // 
             pictureBoxScene.BackColor = Color.Gainsboro;
             pictureBoxScene.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxScene.Location = new Point(153, 27);
+            pictureBoxScene.Location = new Point(156, 27);
             pictureBoxScene.Name = "pictureBoxScene";
-            pictureBoxScene.Size = new Size(475, 212);
+            pictureBoxScene.Size = new Size(472, 212);
             pictureBoxScene.TabIndex = 2;
             pictureBoxScene.TabStop = false;
             // 
             // textBoxInput
             // 
-            textBoxInput.Location = new Point(234, 340);
+            textBoxInput.Location = new Point(237, 340);
             textBoxInput.Name = "textBoxInput";
             textBoxInput.PlaceholderText = "Type actions here...";
-            textBoxInput.Size = new Size(394, 23);
+            textBoxInput.Size = new Size(391, 23);
             textBoxInput.TabIndex = 3;
             textBoxInput.KeyUp += textBoxInput_KeyUp;
             // 
             // buttonAct
             // 
-            buttonAct.Location = new Point(153, 340);
+            buttonAct.Location = new Point(156, 340);
             buttonAct.Name = "buttonAct";
             buttonAct.Size = new Size(75, 23);
             buttonAct.TabIndex = 4;
@@ -101,12 +101,12 @@
             // 
             // textBoxMain
             // 
-            textBoxMain.Location = new Point(153, 245);
+            textBoxMain.Location = new Point(156, 245);
             textBoxMain.Multiline = true;
             textBoxMain.Name = "textBoxMain";
             textBoxMain.ReadOnly = true;
             textBoxMain.ScrollBars = ScrollBars.Vertical;
-            textBoxMain.Size = new Size(475, 89);
+            textBoxMain.Size = new Size(472, 89);
             textBoxMain.TabIndex = 5;
             // 
             // FormMain
