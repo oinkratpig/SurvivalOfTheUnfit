@@ -76,7 +76,39 @@ namespace SurvivalOfTheUnfit
 
         } // end RemoveFromInventory
 
-        /* Uses an item instance from the inventory. */
+        /* Uses and removes an item from the inventory. */
+        public static bool UseItemAndRemove(Item? item, int count, bool useMultiple)
+        {
+            if (item == null) return false;
+
+            Type type = item.GetType();
+            foreach (KeyValuePair<Item, int> invItem in Contents)
+                if (invItem.Key.GetType() == item.GetType())
+                {
+                    if(invItem.Value >= count)
+                    {
+                        RemoveFromInventory(invItem.Key, count);
+                        if (useMultiple)
+                            for (int i = 0; i < count; i++)
+                                item.OnUse();
+                        else
+                            item.OnUse();
+                        return true;
+                    }
+                    return false;
+                }
+            return false;
+
+        } // end UseItemAndRemove
+
+        /* Uses and removes an item from the inventory. */
+        public static bool UseItemAndRemove(Item? item, int count)
+        {
+            return UseItemAndRemove(item, count, true);
+
+        } // end UseItemAndRemove
+
+        /* Uses an item from the inventory. */
         public static bool UseFromInventory(Item? item)
         {
             if (item == null) return false;
