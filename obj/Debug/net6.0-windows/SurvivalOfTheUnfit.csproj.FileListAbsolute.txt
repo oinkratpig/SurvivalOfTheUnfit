@@ -15,3 +15,6 @@ D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOf
 D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.genruntimeconfig.cache
 D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\ref\SurvivalOfTheUnfit.dll
 D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.FormMain.resources
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.Properties.Resources.resources
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.csproj.CopyComplete

@@ -14,7 +14,8 @@ namespace SurvivalOfTheUnfit
 {
     public partial class FormMain : Form
     {
-        public static System.Windows.Forms.TreeView TreeViewActions {
+        public static System.Windows.Forms.TreeView TreeViewActions
+        {
             get { return _formMainInstance.treeViewActions; }
         }
 
@@ -32,9 +33,9 @@ namespace SurvivalOfTheUnfit
             // Events
 
             gameEvents = new GameEvents();
-            Action eat = new ActionEat();
-
-            gameEvents.ActionUpdate += eat.OnActionUpdated;
+            gameEvents.ActionUpdate += new ActionEat().OnActionUpdated;
+            gameEvents.ActionUpdate += new ActionDebug().OnActionUpdated;
+            gameEvents.ActionUpdate += new ActionScavenge().OnActionUpdated;
 
             // Update visuals
 
@@ -61,6 +62,13 @@ namespace SurvivalOfTheUnfit
 
         } // end AddText
 
+        public static void ClearText()
+        {
+            _text.Clear();
+            _formMainInstance.textBoxMain.Text = "";
+
+        } // end ClearText
+
         public static void UpdateText()
         {
             if (_formMainInstance == null) return;
@@ -78,14 +86,29 @@ namespace SurvivalOfTheUnfit
 
         private void buttonAct_Click(object sender, EventArgs e)
         {
+            ClearText();
+
+            AddText(DateTime.Now.ToString());
+            AddText("");
+
             gameEvents.PerformAction(_formMainInstance.textBoxInput.Text);
 
             gameEvents.UpdateActions();
 
-            _formMainInstance.textBoxInput.Text = "";
+            textBoxInput.Text = "";
             UpdateText();
 
         } // end buttonAct_Click
+
+        private void textBoxInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                buttonAct_Click(sender, EventArgs.Empty);
+                e.Handled = true;
+            }
+
+        } // end textBoxInput_KeyUp
 
     } // end class FormMain
 

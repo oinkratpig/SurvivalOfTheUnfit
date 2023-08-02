@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SurvivalOfTheUnfit
 {
-    public class ActionEat : Action
+    public class ActionDebug : Action
     {
-        public ActionEat()
+        public ActionDebug()
         {
             Enabled = true;
-            ActionName = "eat";
+            ActionName = "inventory";
             Category = CategoryType.Character;
 
         } // end constructor
@@ -20,16 +20,13 @@ namespace SurvivalOfTheUnfit
 
         public override void OnActionPerformed()
         {
-            if (Inventory.HasEnough(new ItemMysteryMeat(), 1))
-            {
-                Inventory.RemoveFromInventory(new ItemMysteryMeat(), 1);
-                FormMain.AddText("Ate some yummy something-meat!");
-            }
-            else
-                FormMain.AddText("You tried to eat some food. If only you had any.");
+            FormMain.AddText("Current Inventory:");
+
+            foreach (KeyValuePair<Item, int> item in Inventory.Contents)
+                FormMain.AddText($"{item.Key.Name} x{item.Value}");
 
         } // end event OnUpdateAction
 
-    } // end class ActionEat
+    } // end class ActionDebug
 
 } // end namesapce

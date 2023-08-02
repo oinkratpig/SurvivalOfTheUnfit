@@ -16,14 +16,9 @@ namespace SurvivalOfTheUnfit
             Crafting = 2
         }
 
-        protected string actionName;
-        public string ActionName { get { return actionName; } }
-
-        protected CategoryType category;
-        public CategoryType Category { get { return category; } }
-
-        private bool _enabled = false;
-        public bool Enabled { get { return _enabled; } protected set { _enabled = value;  } }
+        public string ActionName { get; protected set; }
+        public CategoryType Category { get; protected set; }
+        public bool Enabled { get; protected set; }
 
         /* When the action is updated. Should set what criteria makes it visble/invisible. */
         public abstract void OnActionUpdated(object sender, EventArgs args);
