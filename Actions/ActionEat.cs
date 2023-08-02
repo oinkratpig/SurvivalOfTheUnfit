@@ -20,9 +20,11 @@ namespace SurvivalOfTheUnfit
 
         public override void OnActionPerformed()
         {
-            if (Inventory.HasEnough(new ItemMysteryMeat(), 1))
+            ItemMysteryMeat meat = new ItemMysteryMeat();
+            if (Inventory.HasEnough(meat, 1))
             {
-                Inventory.RemoveFromInventory(new ItemMysteryMeat(), 1);
+                Inventory.UseFromInventory(meat);
+                Inventory.RemoveFromInventory(meat, 1);
                 FormMain.AddText("Ate some yummy something-meat!");
             }
             else

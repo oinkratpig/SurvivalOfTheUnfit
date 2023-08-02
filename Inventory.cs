@@ -76,6 +76,23 @@ namespace SurvivalOfTheUnfit
 
         } // end RemoveFromInventory
 
+        /* Uses an item instance from the inventory. */
+        public static bool UseFromInventory(Item? item)
+        {
+            if (item == null) return false;
+
+            Type type = item.GetType();
+            foreach (KeyValuePair<Item, int> invItem in Contents)
+                if (invItem.Key.GetType() == item.GetType())
+                {
+                    item.OnUse();
+                    return true;
+                }
+
+            return false;
+
+        } // end RemoveFromInventory
+
         /* Returns true if you have enough of an item in the inventory. */
         public static bool HasEnough(Item? item, int count)
         {
