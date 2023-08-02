@@ -22,7 +22,7 @@ namespace SurvivalOfTheUnfit
         private GameEvents gameEvents;
 
         private const int TEXT_LINE_MAX = 20;
-        private static FormMain? _formMainInstance;
+        private static FormMain _formMainInstance;
         private static List<string> _text = new List<string>();
 
         /* On startup. */
