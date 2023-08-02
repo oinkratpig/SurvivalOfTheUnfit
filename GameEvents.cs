@@ -11,6 +11,15 @@ namespace SurvivalOfTheUnfit
         public delegate void ActionHandler(object sender, EventArgs args);
         public event ActionHandler ActionUpdate;
 
+        /* Constructor / initialize events */
+        public GameEvents()
+        {
+            ActionUpdate += new ActionEat().OnActionUpdated;
+            ActionUpdate += new ActionInventory().OnActionUpdated;
+            ActionUpdate += new ActionScavenge().OnActionUpdated;
+
+        } // end GameEvents
+
         /* Update actions so they may become enabled/disabled/etc depending on the situation. */
         public void UpdateActions()
         {

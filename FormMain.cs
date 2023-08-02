@@ -32,14 +32,9 @@ namespace SurvivalOfTheUnfit
             _formMainInstance = this;
 
             // Events
-
             gameEvents = new GameEvents();
-            gameEvents.ActionUpdate += new ActionEat().OnActionUpdated;
-            gameEvents.ActionUpdate += new ActionInventory().OnActionUpdated;
-            gameEvents.ActionUpdate += new ActionScavenge().OnActionUpdated;
 
-            // Update visuals
-
+            // Actions
             gameEvents.UpdateActions();
 
         } // end constructor
