@@ -32,12 +32,12 @@
             menuItemOptions = new ToolStripMenuItem();
             menuItemCharacter = new ToolStripMenuItem();
             treeViewActions = new TreeView();
-            pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            pictureBoxScene = new PictureBox();
+            textBoxInput = new TextBox();
             buttonAct = new Button();
-            textBox2 = new TextBox();
+            textBoxMain = new TextBox();
             menuStripMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
             SuspendLayout();
             // 
             // menuStripMain
@@ -70,23 +70,23 @@
             treeViewActions.Size = new Size(135, 337);
             treeViewActions.TabIndex = 1;
             // 
-            // pictureBox1
+            // pictureBoxScene
             // 
-            pictureBox1.BackColor = Color.Gainsboro;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(153, 27);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(475, 212);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            pictureBoxScene.BackColor = Color.Gainsboro;
+            pictureBoxScene.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxScene.Location = new Point(153, 27);
+            pictureBoxScene.Name = "pictureBoxScene";
+            pictureBoxScene.Size = new Size(475, 212);
+            pictureBoxScene.TabIndex = 2;
+            pictureBoxScene.TabStop = false;
             // 
-            // textBox1
+            // textBoxInput
             // 
-            textBox1.Location = new Point(234, 340);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Type actions here...";
-            textBox1.Size = new Size(394, 23);
-            textBox1.TabIndex = 3;
+            textBoxInput.Location = new Point(234, 340);
+            textBoxInput.Name = "textBoxInput";
+            textBoxInput.PlaceholderText = "Type actions here...";
+            textBoxInput.Size = new Size(394, 23);
+            textBoxInput.TabIndex = 3;
             // 
             // buttonAct
             // 
@@ -96,25 +96,27 @@
             buttonAct.TabIndex = 4;
             buttonAct.Text = "Act";
             buttonAct.UseVisualStyleBackColor = true;
+            buttonAct.Click += buttonAct_Click;
             // 
-            // textBox2
+            // textBoxMain
             // 
-            textBox2.Location = new Point(153, 245);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(475, 89);
-            textBox2.TabIndex = 5;
+            textBoxMain.Location = new Point(153, 245);
+            textBoxMain.Multiline = true;
+            textBoxMain.Name = "textBoxMain";
+            textBoxMain.ReadOnly = true;
+            textBoxMain.ScrollBars = ScrollBars.Vertical;
+            textBoxMain.Size = new Size(475, 89);
+            textBoxMain.TabIndex = 5;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(640, 376);
-            Controls.Add(textBox2);
+            Controls.Add(textBoxMain);
             Controls.Add(buttonAct);
-            Controls.Add(textBox1);
-            Controls.Add(pictureBox1);
+            Controls.Add(textBoxInput);
+            Controls.Add(pictureBoxScene);
             Controls.Add(treeViewActions);
             Controls.Add(menuStripMain);
             MainMenuStrip = menuStripMain;
@@ -122,7 +124,7 @@
             Text = "FormMain";
             menuStripMain.ResumeLayout(false);
             menuStripMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxScene).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,9 +135,9 @@
         private ToolStripMenuItem menuItemOptions;
         private ToolStripMenuItem menuItemCharacter;
         private TreeView treeViewActions;
-        private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private PictureBox pictureBoxScene;
+        private TextBox textBoxInput;
         private Button buttonAct;
-        private TextBox textBox2;
+        private TextBox textBoxMain;
     }
 }
