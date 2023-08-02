@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SurvivalOfTheUnfit
 {
-    public class ActionDebug : Action
+    public class ActionInventory : Action
     {
-        public ActionDebug()
+        public ActionInventory()
         {
             Enabled = true;
             ActionName = "inventory";

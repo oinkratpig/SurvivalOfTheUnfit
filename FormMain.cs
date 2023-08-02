@@ -25,6 +25,7 @@ namespace SurvivalOfTheUnfit
         private static FormMain? _formMainInstance;
         private static List<string> _text = new List<string>();
 
+        /* On startup. */
         public FormMain()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace SurvivalOfTheUnfit
 
             gameEvents = new GameEvents();
             gameEvents.ActionUpdate += new ActionEat().OnActionUpdated;
-            gameEvents.ActionUpdate += new ActionDebug().OnActionUpdated;
+            gameEvents.ActionUpdate += new ActionInventory().OnActionUpdated;
             gameEvents.ActionUpdate += new ActionScavenge().OnActionUpdated;
 
             // Update visuals
@@ -43,6 +44,7 @@ namespace SurvivalOfTheUnfit
 
         } // end constructor
 
+        /* Appends text to the end of the main text box. */
         public static void AddText(string text)
         {
             _text.Add(text);
@@ -54,6 +56,7 @@ namespace SurvivalOfTheUnfit
 
         } // end AddText
 
+        /* Appends text to the end of the main text box with or without a newline before it. */
         public static void AddText(string text, bool addNewlineBefore)
         {
             if (addNewlineBefore) AddText("");
@@ -62,6 +65,7 @@ namespace SurvivalOfTheUnfit
 
         } // end AddText
 
+        /* Clears all text within the main text box.*/
         public static void ClearText()
         {
             _text.Clear();
@@ -69,6 +73,7 @@ namespace SurvivalOfTheUnfit
 
         } // end ClearText
 
+        /* Updates the text box to show all appended text. */
         public static void UpdateText()
         {
             if (_formMainInstance == null) return;
@@ -84,6 +89,7 @@ namespace SurvivalOfTheUnfit
 
         } // end UpdateText
 
+        /* Called when the Act button is clicked. */
         private void buttonAct_Click(object sender, EventArgs e)
         {
             ClearText();
@@ -100,6 +106,7 @@ namespace SurvivalOfTheUnfit
 
         } // end buttonAct_Click
 
+        /* Pressing enter within the Act text box will result in the same thing as pressing the button. */
         private void textBoxInput_KeyUp(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)

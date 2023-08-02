@@ -20,7 +20,7 @@ namespace SurvivalOfTheUnfit
         public CategoryType Category { get; protected set; }
         public bool Enabled { get; protected set; }
 
-        /* When the action is updated. Should set what criteria makes it visble/invisible. */
+        /* When the action is updated. Should set what criteria makes it enabled/disabled. */
         public abstract void OnActionUpdated(object sender, EventArgs args);
 
         /* When the action is typed in the act textbox and the button is pressed. */

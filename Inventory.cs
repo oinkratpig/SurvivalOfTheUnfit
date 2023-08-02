@@ -15,6 +15,7 @@ namespace SurvivalOfTheUnfit
             private set { _contents = value; }
         }
 
+        /* Adds an item instance to the inventory. */
         public static bool AddToInventory(Item? item, int count)
         {
             if (item == null) return false;
@@ -46,12 +47,14 @@ namespace SurvivalOfTheUnfit
 
         } // end AddToInventory
 
+        /* Adds a single item instance to the inventory. */
         public static bool AddToInventory(Item? item)
         {
             return AddToInventory(item, 1);
 
         } // end AddToInventory
 
+        /* Removes an item instance from the inventory. */
         public static bool RemoveFromInventory(Item? item, int count)
         {
             if (item == null) return false;
@@ -73,6 +76,7 @@ namespace SurvivalOfTheUnfit
 
         } // end RemoveFromInventory
 
+        /* Returns true if you have enough of an item in the inventory. */
         public static bool HasEnough(Item? item, int count)
         {
             if (item == null) return false;

@@ -11,6 +11,7 @@ namespace SurvivalOfTheUnfit
         public delegate void ActionHandler(object sender, EventArgs args);
         public event ActionHandler ActionUpdate;
 
+        /* Update actions so they may become enabled/disabled/etc depending on the situation. */
         public void UpdateActions()
         {
             ActionUpdate(this, EventArgs.Empty);
@@ -48,6 +49,7 @@ namespace SurvivalOfTheUnfit
 
         } // end UpdateActions
 
+        /* Performs the specified action if it is enabled. */
         public void PerformAction(string actionName)
         {
             Delegate[] actions = ActionUpdate.GetInvocationList();
