@@ -1,0 +1,17 @@
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\bin\Debug\net6.0-windows\SurvivalOfTheUnfit.exe
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\bin\Debug\net6.0-windows\SurvivalOfTheUnfit.deps.json
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\bin\Debug\net6.0-windows\SurvivalOfTheUnfit.runtimeconfig.json
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\bin\Debug\net6.0-windows\SurvivalOfTheUnfit.dll
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\bin\Debug\net6.0-windows\SurvivalOfTheUnfit.pdb
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.csproj.AssemblyReference.cache
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.csproj.GenerateResource.cache
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.AssemblyInfoInputs.cache
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.AssemblyInfo.cs
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.csproj.CoreCompileInputs.cache
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.dll
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\refint\SurvivalOfTheUnfit.dll
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.pdb
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.genruntimeconfig.cache
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\ref\SurvivalOfTheUnfit.dll
+D:\Desktop Contents\My stuff\Programming Projects\Visual Studio\Other\SurvivalOfTheUnfit\obj\Debug\net6.0-windows\SurvivalOfTheUnfit.FormMain.resources
