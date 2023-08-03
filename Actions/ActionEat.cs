@@ -21,9 +21,9 @@ namespace SurvivalOfTheUnfit
         public override void OnActionPerformed()
         {
             if(Inventory.UseItemAndRemove(new ItemMysteryMeat(), 1))
-                FormMain.AddText("Ate some yummy something-meat!");
+                FormMain.AddText("ate some yummy something-meat!");
             else
-                FormMain.AddText("You tried to eat some food. If only you had any.");
+                FormMain.AddText("you tried to eat some food./r/nif only you had any.");
 
         } // end event OnUpdateAction
 

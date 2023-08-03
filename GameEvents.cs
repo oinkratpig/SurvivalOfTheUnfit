@@ -37,7 +37,7 @@ namespace SurvivalOfTheUnfit
 
                 if (target.Enabled)
                 {
-                    string category = target.Category.ToString();
+                    string category = target.Category.ToString().ToLower();
 
                     if (!treeNodes.ContainsKey(category))
                         treeNodes.Add(category, new List<string>());
@@ -51,7 +51,7 @@ namespace SurvivalOfTheUnfit
             FormMain.TreeViewActions.Nodes.Clear();
             foreach (KeyValuePair<string, List<string>> node in treeNodes)
             {
-                TreeNode category = FormMain.TreeViewActions.Nodes.Add(node.Key);
+                TreeNode category = FormMain.TreeViewActions.Nodes.Add(node.Key.ToLower());
                 foreach (string action in node.Value)
                     category.Nodes.Add(action);
             }

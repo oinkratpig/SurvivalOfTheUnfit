@@ -38,6 +38,7 @@
             buttonAct = new Button();
             textBoxMain = new TextBox();
             panelTextBoxInput = new Panel();
+            inventoryToolStripMenuItem = new ToolStripMenuItem();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
             panelTextBoxInput.SuspendLayout();
@@ -70,6 +71,7 @@
             // menuItemCharacter
             // 
             menuItemCharacter.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            menuItemCharacter.DropDownItems.AddRange(new ToolStripItem[] { inventoryToolStripMenuItem });
             menuItemCharacter.Name = "menuItemCharacter";
             menuItemCharacter.Size = new Size(68, 20);
             menuItemCharacter.Text = "character";
@@ -132,6 +134,12 @@
             panelTextBoxInput.Size = new Size(391, 23);
             panelTextBoxInput.TabIndex = 6;
             // 
+            // inventoryToolStripMenuItem
+            // 
+            inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
+            inventoryToolStripMenuItem.Size = new Size(180, 22);
+            inventoryToolStripMenuItem.Text = "inventory";
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -169,5 +177,6 @@
         private TextBox textBoxMain;
         private ToolStripMenuItem menuItemOptionsDarkMode;
         private Panel panelTextBoxInput;
+        private ToolStripMenuItem inventoryToolStripMenuItem;
     }
 }

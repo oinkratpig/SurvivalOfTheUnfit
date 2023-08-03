@@ -20,7 +20,7 @@ namespace SurvivalOfTheUnfit
 
         public override void OnActionPerformed()
         {
-            FormMain.AddText("Current Inventory:");
+            FormMain.AddText("current inventory:");
 
             foreach (KeyValuePair<Item, int> item in Inventory.Contents)
                 FormMain.AddText($"{item.Key.Name} x{item.Value}");

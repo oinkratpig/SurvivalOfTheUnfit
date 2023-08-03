@@ -10,8 +10,8 @@ namespace SurvivalOfTheUnfit
     {
         public ItemMysteryMeat()
         {
-            Name = "Mystery Meat";
-            Description = "Meat from... something?";
+            Name = "mystery meat";
+            Description = "meat from... something?";
             Category = CategoryType.Food;
 
             Unique = false;
