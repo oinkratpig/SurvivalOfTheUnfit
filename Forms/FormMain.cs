@@ -27,7 +27,7 @@ namespace SurvivalOfTheUnfit
 
         private static FormMain _formMainInstance;
         private static FormInventory _formInventoryInstance;
-        
+
         /* On startup. */
         public FormMain()
         {
@@ -157,7 +157,7 @@ namespace SurvivalOfTheUnfit
         /* Open inventory window */
         private void menuItemCharacterInventory_Click(object sender, EventArgs e)
         {
-            if(!_formInventoryInstance.Exists()) _formInventoryInstance = new FormInventory();
+            if (!_formInventoryInstance.Exists()) _formInventoryInstance = new FormInventory();
             _formInventoryInstance.Show();
 
         } // end menuItemCharacterInventory_Click

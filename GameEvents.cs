@@ -56,6 +56,7 @@ namespace SurvivalOfTheUnfit
                 foreach (string action in node.Value)
                     category.Nodes.Add(action);
             }
+            FormMain.TreeViewActions.ExpandAll();
 
         } // end UpdateActions
 

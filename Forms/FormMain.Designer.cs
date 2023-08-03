@@ -39,9 +39,12 @@
             buttonAct = new Button();
             textBoxMain = new TextBox();
             panelTextBoxInput = new Panel();
+            panelActions = new Panel();
+            labelActions = new Label();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
             panelTextBoxInput.SuspendLayout();
+            panelActions.SuspendLayout();
             SuspendLayout();
             // 
             // menuStripMain
@@ -64,7 +67,7 @@
             // menuItemOptionsDarkMode
             // 
             menuItemOptionsDarkMode.Name = "menuItemOptionsDarkMode";
-            menuItemOptionsDarkMode.Size = new Size(180, 22);
+            menuItemOptionsDarkMode.Size = new Size(131, 22);
             menuItemOptionsDarkMode.Text = "dark mode";
             menuItemOptionsDarkMode.Click += menuItemOptionsDarkMode_Click;
             // 
@@ -79,16 +82,17 @@
             // menuItemCharacterInventory
             // 
             menuItemCharacterInventory.Name = "menuItemCharacterInventory";
-            menuItemCharacterInventory.Size = new Size(180, 22);
+            menuItemCharacterInventory.Size = new Size(124, 22);
             menuItemCharacterInventory.Text = "inventory";
             menuItemCharacterInventory.Click += menuItemCharacterInventory_Click;
             // 
             // treeViewActions
             // 
             treeViewActions.BorderStyle = BorderStyle.None;
-            treeViewActions.Location = new Point(12, 32);
+            treeViewActions.Location = new Point(0, 24);
             treeViewActions.Name = "treeViewActions";
-            treeViewActions.Size = new Size(138, 332);
+            treeViewActions.ShowPlusMinus = false;
+            treeViewActions.Size = new Size(138, 296);
             treeViewActions.TabIndex = 1;
             // 
             // pictureBoxScene
@@ -141,17 +145,35 @@
             panelTextBoxInput.Size = new Size(391, 23);
             panelTextBoxInput.TabIndex = 6;
             // 
+            // panelActions
+            // 
+            panelActions.Controls.Add(labelActions);
+            panelActions.Controls.Add(treeViewActions);
+            panelActions.Location = new Point(12, 32);
+            panelActions.Name = "panelActions";
+            panelActions.Size = new Size(138, 332);
+            panelActions.TabIndex = 7;
+            // 
+            // labelActions
+            // 
+            labelActions.AutoSize = true;
+            labelActions.Location = new Point(8, 6);
+            labelActions.Name = "labelActions";
+            labelActions.Size = new Size(45, 15);
+            labelActions.TabIndex = 2;
+            labelActions.Text = "actions";
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(640, 376);
+            Controls.Add(panelActions);
             Controls.Add(panelTextBoxInput);
             Controls.Add(textBoxMain);
             Controls.Add(buttonAct);
             Controls.Add(pictureBoxScene);
-            Controls.Add(treeViewActions);
             Controls.Add(menuStripMain);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStripMain;
@@ -162,6 +184,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).EndInit();
             panelTextBoxInput.ResumeLayout(false);
             panelTextBoxInput.PerformLayout();
+            panelActions.ResumeLayout(false);
+            panelActions.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,5 +203,7 @@
         private ToolStripMenuItem menuItemOptionsDarkMode;
         private Panel panelTextBoxInput;
         private ToolStripMenuItem menuItemCharacterInventory;
+        private Panel panelActions;
+        private Label labelActions;
     }
 }
