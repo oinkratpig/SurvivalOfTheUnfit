@@ -30,6 +30,7 @@ namespace SurvivalOfTheUnfit
         {
             InitializeComponent();
             _formMainInstance = this;
+            AcceptButton = buttonAct;
 
             // Events
             gameEvents = new GameEvents();
@@ -100,17 +101,6 @@ namespace SurvivalOfTheUnfit
             UpdateText();
 
         } // end buttonAct_Click
-
-        /* Pressing enter within the Act text box will result in the same thing as pressing the button. */
-        private void textBoxInput_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                buttonAct_Click(sender, EventArgs.Empty);
-                e.Handled = true;
-            }
-
-        } // end textBoxInput_KeyUp
 
     } // end class FormMain
 
