@@ -11,7 +11,7 @@ namespace SurvivalOfTheUnfit
         public ColorThemeDark()
         {
             ColorMain = ColorFromHex("#2e2f38");
-            ColorControl = ColorFromHex("#424349");
+            ColorControl = ColorFromHex("#33343e");
             ColorText = ColorFromHex("#d4d5e5");
 
         } // end ColorThemeDark
