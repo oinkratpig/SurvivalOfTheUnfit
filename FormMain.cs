@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,10 @@ namespace SurvivalOfTheUnfit
 
         private GameEvents gameEvents;
 
-        private const int TEXT_LINE_MAX = 20;
-        private static FormMain _formMainInstance;
+        private const int TEXT_LINE_MAX = 7;
         private static List<string> _text = new List<string>();
+
+        private static FormMain _formMainInstance;
 
         /* On startup. */
         public FormMain()
@@ -32,6 +34,11 @@ namespace SurvivalOfTheUnfit
             _formMainInstance = this;
             this.Select();
 
+            // Theme
+            ColorTheme.CurrentTheme = new ColorThemeLight();
+            ColorTheme.ThemeUpdated += OnThemeUpdated;
+            ColorTheme.UpdateFormThemes();
+
             // Events
             gameEvents = new GameEvents();
 
@@ -39,6 +46,12 @@ namespace SurvivalOfTheUnfit
             gameEvents.UpdateActions();
 
         } // end constructor
+
+        public void OnThemeUpdated(object sender, EventArgs e)
+        {
+            ColorTheme.ApplyFormTheme(this, ColorTheme.CurrentTheme);
+
+        } // end OnThemeUpdated
 
         /* Appends text to the end of the main text box. */
         public static void AddText(string text)
@@ -116,10 +129,24 @@ namespace SurvivalOfTheUnfit
 
         } // end buttonAct_Click
 
-        private void FormMain_Load(object sender, EventArgs e)
+        /* Toggle dark mode. */
+        private void menuItemOptionsDarkMode_Click(object sender, EventArgs e)
         {
+            if (menuItemOptionsDarkMode.CheckState == CheckState.Checked)
+            {
+                menuItemOptionsDarkMode.CheckState = CheckState.Unchecked;
+                ColorTheme.CurrentTheme = new ColorThemeLight();
+            }
+            else
+            {
+                menuItemOptionsDarkMode.CheckState = CheckState.Checked;
+                ColorTheme.CurrentTheme = new ColorThemeDark();
+            }
 
-        }
+            ColorTheme.UpdateFormThemes();
+
+        } // end menuItemOptionsDarkMode_Click
+
     } // end class FormMain
 
 } // end namespace

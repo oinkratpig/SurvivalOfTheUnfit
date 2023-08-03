@@ -30,15 +30,17 @@
         {
             menuStripMain = new MenuStrip();
             menuItemOptions = new ToolStripMenuItem();
+            menuItemOptionsDarkMode = new ToolStripMenuItem();
             menuItemCharacter = new ToolStripMenuItem();
             treeViewActions = new TreeView();
             pictureBoxScene = new PictureBox();
             textBoxInput = new TextBox();
             buttonAct = new Button();
             textBoxMain = new TextBox();
-            labelDivider = new Label();
+            panelTextBoxInput = new Panel();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
+            panelTextBoxInput.SuspendLayout();
             SuspendLayout();
             // 
             // menuStripMain
@@ -53,9 +55,17 @@
             // menuItemOptions
             // 
             menuItemOptions.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            menuItemOptions.DropDownItems.AddRange(new ToolStripItem[] { menuItemOptionsDarkMode });
             menuItemOptions.Name = "menuItemOptions";
             menuItemOptions.Size = new Size(59, 20);
             menuItemOptions.Text = "options";
+            // 
+            // menuItemOptionsDarkMode
+            // 
+            menuItemOptionsDarkMode.Name = "menuItemOptionsDarkMode";
+            menuItemOptionsDarkMode.Size = new Size(131, 22);
+            menuItemOptionsDarkMode.Text = "dark mode";
+            menuItemOptionsDarkMode.Click += menuItemOptionsDarkMode_Click;
             // 
             // menuItemCharacter
             // 
@@ -66,6 +76,7 @@
             // 
             // treeViewActions
             // 
+            treeViewActions.BorderStyle = BorderStyle.None;
             treeViewActions.Location = new Point(12, 32);
             treeViewActions.Name = "treeViewActions";
             treeViewActions.Size = new Size(138, 332);
@@ -74,7 +85,6 @@
             // pictureBoxScene
             // 
             pictureBoxScene.BackColor = Color.Gainsboro;
-            pictureBoxScene.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxScene.Location = new Point(156, 32);
             pictureBoxScene.Name = "pictureBoxScene";
             pictureBoxScene.Size = new Size(472, 207);
@@ -83,16 +93,19 @@
             // 
             // textBoxInput
             // 
-            textBoxInput.Location = new Point(237, 341);
+            textBoxInput.BorderStyle = BorderStyle.None;
+            textBoxInput.Location = new Point(8, 4);
             textBoxInput.Name = "textBoxInput";
             textBoxInput.PlaceholderText = "type actions here...";
-            textBoxInput.Size = new Size(391, 23);
+            textBoxInput.Size = new Size(372, 16);
             textBoxInput.TabIndex = 3;
             textBoxInput.Enter += textBoxInput_Enter;
             textBoxInput.Leave += textBoxInput_Leave;
             // 
             // buttonAct
             // 
+            buttonAct.FlatAppearance.BorderSize = 0;
+            buttonAct.FlatStyle = FlatStyle.Flat;
             buttonAct.Location = new Point(156, 341);
             buttonAct.Name = "buttonAct";
             buttonAct.Size = new Size(75, 23);
@@ -103,42 +116,43 @@
             // 
             // textBoxMain
             // 
+            textBoxMain.BorderStyle = BorderStyle.None;
             textBoxMain.Location = new Point(156, 245);
             textBoxMain.Multiline = true;
             textBoxMain.Name = "textBoxMain";
             textBoxMain.ReadOnly = true;
-            textBoxMain.ScrollBars = ScrollBars.Vertical;
             textBoxMain.Size = new Size(472, 90);
             textBoxMain.TabIndex = 5;
             // 
-            // labelDivider
+            // panelTextBoxInput
             // 
-            labelDivider.BorderStyle = BorderStyle.Fixed3D;
-            labelDivider.Location = new Point(0, 27);
-            labelDivider.Name = "labelDivider";
-            labelDivider.Size = new Size(640, 2);
-            labelDivider.TabIndex = 7;
+            panelTextBoxInput.Controls.Add(textBoxInput);
+            panelTextBoxInput.Location = new Point(237, 341);
+            panelTextBoxInput.Name = "panelTextBoxInput";
+            panelTextBoxInput.Size = new Size(391, 23);
+            panelTextBoxInput.TabIndex = 6;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(640, 376);
-            Controls.Add(labelDivider);
+            Controls.Add(panelTextBoxInput);
             Controls.Add(textBoxMain);
             Controls.Add(buttonAct);
-            Controls.Add(textBoxInput);
             Controls.Add(pictureBoxScene);
             Controls.Add(treeViewActions);
             Controls.Add(menuStripMain);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStripMain;
             Name = "FormMain";
-            Text = "FormMain";
-            Load += FormMain_Load;
+            Text = "Survival of the Unfit";
             menuStripMain.ResumeLayout(false);
             menuStripMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).EndInit();
+            panelTextBoxInput.ResumeLayout(false);
+            panelTextBoxInput.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -153,6 +167,7 @@
         private TextBox textBoxInput;
         private Button buttonAct;
         private TextBox textBoxMain;
-        private Label labelDivider;
+        private ToolStripMenuItem menuItemOptionsDarkMode;
+        private Panel panelTextBoxInput;
     }
 }
