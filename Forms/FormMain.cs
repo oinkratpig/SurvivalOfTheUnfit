@@ -36,7 +36,8 @@ namespace SurvivalOfTheUnfit
             this.Select();
 
             // Theme
-            ColorTheme.CurrentTheme = new ColorThemeLight();
+            menuItemOptionsDarkMode.CheckState = CheckState.Checked;
+            ColorTheme.CurrentTheme = new ColorThemeDark();
             ColorTheme.ThemeUpdated += OnThemeUpdated;
             ColorTheme.UpdateFormThemes();
 
@@ -122,15 +123,27 @@ namespace SurvivalOfTheUnfit
             AddText(DateTime.Now.ToString());
             AddText("");
 
+            // Remove newline if at start of text box
             List<string> actionArgs = _formMainInstance.textBoxInput.Text.Split(" ").ToList<string>();
             actionArgs.RemoveAt(0);
 
-            gameEvents.PerformAction(_formMainInstance.textBoxInput.Text, actionArgs.ToArray());
+            // Perform action that was typed
+            if(gameEvents.PerformAction(_formMainInstance.textBoxInput.Text, actionArgs.ToArray()))
+            {
+                // Update all actions
+                gameEvents.UpdateActions();
+                if (_formInventoryInstance.Exists())
+                    _formInventoryInstance.UpdateInventory();
 
-            gameEvents.UpdateActions();
-            if (_formInventoryInstance.Exists())
-                _formInventoryInstance.UpdateInventory();
+                // Play sound
+                Sound.Play(Sounds.Select);
+            }
 
+            // No valid action
+            else
+                AddText("nothing happened.");
+
+            // Clear input text and update main text box
             textBoxInput.Text = "";
             UpdateText();
 

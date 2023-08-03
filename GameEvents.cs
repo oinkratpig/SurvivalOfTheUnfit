@@ -15,7 +15,6 @@ namespace SurvivalOfTheUnfit
         public GameEvents()
         {
             ActionUpdate += new ActionEat().OnActionUpdated;
-            ActionUpdate += new ActionInventory().OnActionUpdated;
             ActionUpdate += new ActionHunt().OnActionUpdated;
             ActionUpdate += new ActionGather().OnActionUpdated;
 
@@ -60,8 +59,8 @@ namespace SurvivalOfTheUnfit
 
         } // end UpdateActions
 
-        /* Performs the specified action if it is enabled. */
-        public void PerformAction(string actionName, string[] args)
+        /* Performs the specified action if it is enabled, returns if successful. */
+        public bool PerformAction(string actionName, string[] args)
         {
             Delegate[] actions = ActionUpdate.GetInvocationList();
             foreach (Delegate action in actions)
@@ -69,9 +68,13 @@ namespace SurvivalOfTheUnfit
                 Action? target = action.Target as Action;
                 if (target == null) continue;
 
-                if(target.Enabled && target.ActionName == actionName)
+                if (target.Enabled && target.ActionName == actionName)
+                {
                     target.OnActionPerformed(args);
+                    return true;
+                }
             }
+            return false;
             
         } // end PerformAction
 

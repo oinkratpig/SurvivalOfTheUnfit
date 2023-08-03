@@ -56,18 +56,21 @@ namespace SurvivalOfTheUnfit
                 if (!categories.Contains(category))
                     categories.Add(category);
             }
+            categories.Sort();
 
             // Add all items and categories
-            int x = INVENTORY_PADDING_HORIZONTAL; // current coords to place controls
+            int x; // current coords to place controls
             int y = INVENTORY_PADDING_VERTICAL; // ^
             foreach (string category in categories)
             {
+                x = INVENTORY_PADDING_HORIZONTAL * 2;
+
                 // Create category label
                 Label label = new Label();
                 panelInventory.Controls.Add(label);
-                label.Text = category;
+                label.Text = category.ToLower();
                 label.Location = new Point(x, y);
-                y += INVENTORY_PADDING_VERTICAL + label.Size.Height;
+                y += label.Size.Height;
 
                 // Create images
                 int yToIncrement = 0;
@@ -94,7 +97,7 @@ namespace SurvivalOfTheUnfit
                             y += yToIncrement + INVENTORY_PADDING_VERTICAL;
                         }
                     }
-                x = INVENTORY_PADDING_HORIZONTAL;
+
                 y += yToIncrement + INVENTORY_PADDING_VERTICAL;
             }
 
