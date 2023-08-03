@@ -19,7 +19,7 @@ namespace SurvivalOfTheUnfit
             foreach (Type instance in newInstances)
                 Activator.CreateInstance(instance);
 
-        } // end InitActions
+        } // end InstantiateAll
 
     } // end class InstantiateOnStart
 
