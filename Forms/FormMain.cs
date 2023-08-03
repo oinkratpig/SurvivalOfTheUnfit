@@ -120,7 +120,10 @@ namespace SurvivalOfTheUnfit
             AddText(DateTime.Now.ToString());
             AddText("");
 
-            gameEvents.PerformAction(_formMainInstance.textBoxInput.Text);
+            List<string> actionArgs = _formMainInstance.textBoxInput.Text.Split(" ").ToList<string>();
+            actionArgs.RemoveAt(0);
+
+            gameEvents.PerformAction(_formMainInstance.textBoxInput.Text, actionArgs.ToArray());
 
             gameEvents.UpdateActions();
 

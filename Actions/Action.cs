@@ -25,7 +25,7 @@ namespace SurvivalOfTheUnfit
         public abstract void OnActionUpdated(object sender, EventArgs args);
 
         /* When the action is typed in the act textbox and the button is pressed. */
-        public abstract void OnActionPerformed();
+        public abstract void OnActionPerformed(string[] args);
 
     } // end class Action
 

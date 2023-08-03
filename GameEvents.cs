@@ -59,7 +59,7 @@ namespace SurvivalOfTheUnfit
         } // end UpdateActions
 
         /* Performs the specified action if it is enabled. */
-        public void PerformAction(string actionName)
+        public void PerformAction(string actionName, string[] args)
         {
             Delegate[] actions = ActionUpdate.GetInvocationList();
             foreach (Delegate action in actions)
@@ -68,7 +68,7 @@ namespace SurvivalOfTheUnfit
                 if (target == null) continue;
 
                 if(target.Enabled && target.ActionName == actionName)
-                    target.OnActionPerformed();
+                    target.OnActionPerformed(args);
             }
             
         } // end PerformAction
