@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace SurvivalOfTheUnfit
 {
     [InstantiateOnStart]
-    public class ActionGather : Action
+    public class ActionDrink : Action
     {
-        public ActionGather()
+        public ActionDrink()
         {
             Enabled = true;
-            ActionName = "gather";
-            Category = CategoryType.Scavenging;
+            ActionName = "drink";
+            Category = CategoryType.Character;
 
         } // end constructor
 
@@ -21,12 +21,10 @@ namespace SurvivalOfTheUnfit
 
         public override void OnActionPerformed(string[] args)
         {
-            Inventory.AddToInventory(new ItemStick());
-            Inventory.AddToInventory(new ItemRock());
-            FormMain.AddText("found some sticks and rocks.");
+            FormMain.AddText("drank some watuh.");
 
-        } // end event OnActionPerformed
+        } // end OnActionPerformed
 
-    } // end class ActionGather
+    } // end class ActionDrink
 
 } // end namespace

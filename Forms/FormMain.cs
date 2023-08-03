@@ -44,6 +44,9 @@ namespace SurvivalOfTheUnfit
             // Events
             gameEvents = new GameEvents();
 
+            // Instantiate all classes to instantiate on load
+            InstantiateOnStart.InstantiateAll();
+
             // Actions
             gameEvents.UpdateActions();
 

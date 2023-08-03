@@ -9,16 +9,7 @@ namespace SurvivalOfTheUnfit
     internal class GameEvents
     {
         public delegate void ActionHandler(object sender, EventArgs args);
-        public event ActionHandler ActionUpdate;
-
-        /* Constructor / initialize events */
-        public GameEvents()
-        {
-            ActionUpdate += new ActionEat().OnActionUpdated;
-            ActionUpdate += new ActionHunt().OnActionUpdated;
-            ActionUpdate += new ActionGather().OnActionUpdated;
-
-        } // end GameEvents
+        public static event ActionHandler ActionUpdate;
 
         /* Update actions so they may become enabled/disabled/etc depending on the situation. */
         public void UpdateActions()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SurvivalOfTheUnfit
 {
+    [InstantiateOnStart]
     public class ActionHunt : Action
     {
         public ActionHunt()
@@ -23,7 +24,7 @@ namespace SurvivalOfTheUnfit
             Inventory.AddToInventory(new ItemMysteryMeat());
             FormMain.AddText("found some meat!");
 
-        } // end event OnUpdateAction
+        } // end event OnActionPerformed
 
     } // end class ActionHunt
 

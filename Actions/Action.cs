@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SurvivalOfTheUnfit
 {
@@ -20,6 +24,13 @@ namespace SurvivalOfTheUnfit
         public string ActionName { get; protected set; }
         public CategoryType Category { get; protected set; }
         public bool Enabled { get; protected set; }
+
+        public Action()
+        {
+            ActionName = string.Empty;
+            GameEvents.ActionUpdate += OnActionUpdated;
+
+        } // end constructor
 
         /* When the action is updated. Should set what criteria makes it enabled/disabled. */
         public abstract void OnActionUpdated(object sender, EventArgs args);

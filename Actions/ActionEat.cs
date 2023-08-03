@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SurvivalOfTheUnfit
 {
+    [InstantiateOnStart]
     public class ActionEat : Action
     {
         public ActionEat()
@@ -21,15 +22,15 @@ namespace SurvivalOfTheUnfit
             Enabled = false;
             if (Inventory.HasEnough(new ItemMysteryMeat(), 1))
                 Enabled = true;
-        
+
         } // end OnActionUpdated
 
         public override void OnActionPerformed(string[] args)
         {
             Inventory.UseItemAndRemove(new ItemMysteryMeat(), 1);
 
-        } // end OnUpdateAction
+        } // end OnActionPerformed
 
     } // end class ActionEat
 
-} // end namesapce
+} // end namespace
