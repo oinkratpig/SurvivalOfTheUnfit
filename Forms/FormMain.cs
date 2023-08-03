@@ -26,7 +26,8 @@ namespace SurvivalOfTheUnfit
         private static List<string> _text = new List<string>();
 
         private static FormMain _formMainInstance;
-
+        private static FormInventory _formInventoryInstance;
+        
         /* On startup. */
         public FormMain()
         {
@@ -47,6 +48,7 @@ namespace SurvivalOfTheUnfit
 
         } // end constructor
 
+        /* Whenever the color theme is changed. */
         public void OnThemeUpdated(object sender, EventArgs e)
         {
             ColorTheme.ApplyFormTheme(this, ColorTheme.CurrentTheme);
@@ -126,6 +128,8 @@ namespace SurvivalOfTheUnfit
             gameEvents.PerformAction(_formMainInstance.textBoxInput.Text, actionArgs.ToArray());
 
             gameEvents.UpdateActions();
+            if (_formInventoryInstance.Exists())
+                _formInventoryInstance.UpdateInventory();
 
             textBoxInput.Text = "";
             UpdateText();
@@ -149,6 +153,14 @@ namespace SurvivalOfTheUnfit
             ColorTheme.UpdateFormThemes();
 
         } // end menuItemOptionsDarkMode_Click
+
+        /* Open inventory window */
+        private void menuItemCharacterInventory_Click(object sender, EventArgs e)
+        {
+            if(!_formInventoryInstance.Exists()) _formInventoryInstance = new FormInventory();
+            _formInventoryInstance.Show();
+
+        } // end menuItemCharacterInventory_Click
 
     } // end class FormMain
 

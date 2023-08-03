@@ -32,13 +32,13 @@
             menuItemOptions = new ToolStripMenuItem();
             menuItemOptionsDarkMode = new ToolStripMenuItem();
             menuItemCharacter = new ToolStripMenuItem();
+            menuItemCharacterInventory = new ToolStripMenuItem();
             treeViewActions = new TreeView();
             pictureBoxScene = new PictureBox();
             textBoxInput = new TextBox();
             buttonAct = new Button();
             textBoxMain = new TextBox();
             panelTextBoxInput = new Panel();
-            inventoryToolStripMenuItem = new ToolStripMenuItem();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
             panelTextBoxInput.SuspendLayout();
@@ -64,17 +64,24 @@
             // menuItemOptionsDarkMode
             // 
             menuItemOptionsDarkMode.Name = "menuItemOptionsDarkMode";
-            menuItemOptionsDarkMode.Size = new Size(131, 22);
+            menuItemOptionsDarkMode.Size = new Size(180, 22);
             menuItemOptionsDarkMode.Text = "dark mode";
             menuItemOptionsDarkMode.Click += menuItemOptionsDarkMode_Click;
             // 
             // menuItemCharacter
             // 
             menuItemCharacter.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            menuItemCharacter.DropDownItems.AddRange(new ToolStripItem[] { inventoryToolStripMenuItem });
+            menuItemCharacter.DropDownItems.AddRange(new ToolStripItem[] { menuItemCharacterInventory });
             menuItemCharacter.Name = "menuItemCharacter";
             menuItemCharacter.Size = new Size(68, 20);
             menuItemCharacter.Text = "character";
+            // 
+            // menuItemCharacterInventory
+            // 
+            menuItemCharacterInventory.Name = "menuItemCharacterInventory";
+            menuItemCharacterInventory.Size = new Size(180, 22);
+            menuItemCharacterInventory.Text = "inventory";
+            menuItemCharacterInventory.Click += menuItemCharacterInventory_Click;
             // 
             // treeViewActions
             // 
@@ -134,12 +141,6 @@
             panelTextBoxInput.Size = new Size(391, 23);
             panelTextBoxInput.TabIndex = 6;
             // 
-            // inventoryToolStripMenuItem
-            // 
-            inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            inventoryToolStripMenuItem.Size = new Size(180, 22);
-            inventoryToolStripMenuItem.Text = "inventory";
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -177,6 +178,6 @@
         private TextBox textBoxMain;
         private ToolStripMenuItem menuItemOptionsDarkMode;
         private Panel panelTextBoxInput;
-        private ToolStripMenuItem inventoryToolStripMenuItem;
+        private ToolStripMenuItem menuItemCharacterInventory;
     }
 }

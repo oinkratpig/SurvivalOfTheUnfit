@@ -17,6 +17,7 @@ namespace SurvivalOfTheUnfit
             ActionUpdate += new ActionEat().OnActionUpdated;
             ActionUpdate += new ActionInventory().OnActionUpdated;
             ActionUpdate += new ActionHunt().OnActionUpdated;
+            ActionUpdate += new ActionGather().OnActionUpdated;
 
         } // end GameEvents
 

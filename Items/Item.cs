@@ -24,6 +24,18 @@ namespace SurvivalOfTheUnfit
         public CategoryType Category { get; set; }
         public bool Unique { get; set; }
 
+        private Bitmap? _sprite = GetSprite("sprItemUnknown");
+        public Bitmap Sprite {
+            get { return _sprite; }
+            protected set { _sprite = value; }
+        }
+
+        public static Bitmap? GetSprite(string spriteName)
+        {
+            return (Bitmap?) Resources.ResourceManager.GetObject(spriteName);
+
+        } // end GetSprite
+
         /* Called when the item is used */
         public abstract void OnUse();
 

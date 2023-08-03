@@ -1,5 +1,4 @@
-﻿using SurvivalOfTheUnfit.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace SurvivalOfTheUnfit
 {
-    internal class ItemMysteryMeat : Item
+    internal class ItemRock : Item
     {
-        public ItemMysteryMeat()
+        public ItemRock()
         {
-            Name = "mystery meat";
-            Description = "meat from... something?";
-            Category = CategoryType.Food;
+            Name = "rock";
+            Description = "this item rocks.";
+            Category = CategoryType.Crafting;
 
             Unique = false;
 
-            Sprite = GetSprite("sprItemMeat");
+            Sprite = GetSprite("sprItemRocks");
 
         } // end constructor
 
@@ -27,6 +26,6 @@ namespace SurvivalOfTheUnfit
 
         public override void OnLost() { }
 
-    } // end class ItemMeat
+    } // end class ItemRock
 
 } // end namespace
