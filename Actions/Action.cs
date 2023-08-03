@@ -13,7 +13,8 @@ namespace SurvivalOfTheUnfit
             Unknown = -1,
             Misc = 0,
             Character = 1,
-            Crafting = 2
+            Crafting = 2,
+            Scavenging = 3
         }
 
         public string ActionName { get; protected set; }

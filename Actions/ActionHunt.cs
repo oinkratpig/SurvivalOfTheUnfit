@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace SurvivalOfTheUnfit
 {
-    public class ActionScavenge : Action
+    public class ActionHunt : Action
     {
-        public ActionScavenge()
+        public ActionHunt()
         {
             Enabled = true;
-            ActionName = "scavenge";
-            Category = CategoryType.Misc;
+            ActionName = "hunt";
+            Category = CategoryType.Scavenging;
 
         } // end constructor
 
@@ -25,6 +25,6 @@ namespace SurvivalOfTheUnfit
 
         } // end event OnUpdateAction
 
-    } // end class ActionScavenge
+    } // end class ActionHunt
 
-} // end namesapce
+} // end namespace

@@ -18,11 +18,11 @@ namespace SurvivalOfTheUnfit
 
         } // end constructor
 
-        public override void OnUse() { FormMain.AddText("eated da meat"); }
+        public override void OnUse() { }
 
-        public override void OnObtain() { FormMain.AddText("got da meat"); }
+        public override void OnObtain() { }
 
-        public override void OnLost() { FormMain.AddText("lost da meat"); }
+        public override void OnLost() { }
 
     } // end class ItemMeat
 
