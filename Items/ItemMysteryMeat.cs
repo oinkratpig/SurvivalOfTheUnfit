@@ -21,7 +21,11 @@ namespace SurvivalOfTheUnfit
 
         } // end constructor
 
-        public override void OnUse() { }
+        public override void OnUse()
+        {
+            FormMain.AddText("ate some yummy something-meat!");
+
+        } // end OnUse
 
         public override void OnObtain() { }
 
