@@ -87,7 +87,8 @@
             textBoxInput.PlaceholderText = "Type actions here...";
             textBoxInput.Size = new Size(391, 23);
             textBoxInput.TabIndex = 3;
-            textBoxInput.KeyUp += textBoxInput_KeyUp;
+            textBoxInput.Enter += textBoxInput_Enter;
+            textBoxInput.Leave += textBoxInput_Leave;
             // 
             // buttonAct
             // 

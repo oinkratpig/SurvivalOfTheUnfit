@@ -30,7 +30,6 @@ namespace SurvivalOfTheUnfit
         {
             InitializeComponent();
             _formMainInstance = this;
-            AcceptButton = buttonAct;
 
             // Events
             gameEvents = new GameEvents();
@@ -84,6 +83,20 @@ namespace SurvivalOfTheUnfit
             }
 
         } // end UpdateText
+
+        /* When player is using input text box. */
+        private void textBoxInput_Enter(object sender, EventArgs e)
+        {
+            AcceptButton = buttonAct;
+
+        } // end textBoxInput_Enter
+
+        /* When player is no longer using input text box. */
+        private void textBoxInput_Leave(object sender, EventArgs e)
+        {
+            AcceptButton = null;
+
+        } // end textBoxInput_Leave
 
         /* Called when the Act button is clicked. */
         private void buttonAct_Click(object sender, EventArgs e)
