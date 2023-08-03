@@ -36,6 +36,7 @@
             textBoxInput = new TextBox();
             buttonAct = new Button();
             textBoxMain = new TextBox();
+            labelDivider = new Label();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
             SuspendLayout();
@@ -53,38 +54,38 @@
             // 
             menuItemOptions.DisplayStyle = ToolStripItemDisplayStyle.Text;
             menuItemOptions.Name = "menuItemOptions";
-            menuItemOptions.Size = new Size(61, 20);
-            menuItemOptions.Text = "Options";
+            menuItemOptions.Size = new Size(59, 20);
+            menuItemOptions.Text = "options";
             // 
             // menuItemCharacter
             // 
             menuItemCharacter.DisplayStyle = ToolStripItemDisplayStyle.Text;
             menuItemCharacter.Name = "menuItemCharacter";
-            menuItemCharacter.Size = new Size(70, 20);
-            menuItemCharacter.Text = "Character";
+            menuItemCharacter.Size = new Size(68, 20);
+            menuItemCharacter.Text = "character";
             // 
             // treeViewActions
             // 
-            treeViewActions.Location = new Point(12, 27);
+            treeViewActions.Location = new Point(12, 32);
             treeViewActions.Name = "treeViewActions";
-            treeViewActions.Size = new Size(138, 337);
+            treeViewActions.Size = new Size(138, 332);
             treeViewActions.TabIndex = 1;
             // 
             // pictureBoxScene
             // 
             pictureBoxScene.BackColor = Color.Gainsboro;
             pictureBoxScene.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxScene.Location = new Point(156, 27);
+            pictureBoxScene.Location = new Point(156, 32);
             pictureBoxScene.Name = "pictureBoxScene";
-            pictureBoxScene.Size = new Size(472, 212);
+            pictureBoxScene.Size = new Size(472, 207);
             pictureBoxScene.TabIndex = 2;
             pictureBoxScene.TabStop = false;
             // 
             // textBoxInput
             // 
-            textBoxInput.Location = new Point(237, 340);
+            textBoxInput.Location = new Point(237, 341);
             textBoxInput.Name = "textBoxInput";
-            textBoxInput.PlaceholderText = "Type actions here...";
+            textBoxInput.PlaceholderText = "type actions here...";
             textBoxInput.Size = new Size(391, 23);
             textBoxInput.TabIndex = 3;
             textBoxInput.Enter += textBoxInput_Enter;
@@ -92,11 +93,11 @@
             // 
             // buttonAct
             // 
-            buttonAct.Location = new Point(156, 340);
+            buttonAct.Location = new Point(156, 341);
             buttonAct.Name = "buttonAct";
             buttonAct.Size = new Size(75, 23);
             buttonAct.TabIndex = 4;
-            buttonAct.Text = "Act";
+            buttonAct.Text = "act";
             buttonAct.UseVisualStyleBackColor = true;
             buttonAct.Click += buttonAct_Click;
             // 
@@ -107,23 +108,34 @@
             textBoxMain.Name = "textBoxMain";
             textBoxMain.ReadOnly = true;
             textBoxMain.ScrollBars = ScrollBars.Vertical;
-            textBoxMain.Size = new Size(472, 89);
+            textBoxMain.Size = new Size(472, 90);
             textBoxMain.TabIndex = 5;
+            // 
+            // labelDivider
+            // 
+            labelDivider.BorderStyle = BorderStyle.Fixed3D;
+            labelDivider.Location = new Point(0, 27);
+            labelDivider.Name = "labelDivider";
+            labelDivider.Size = new Size(640, 2);
+            labelDivider.TabIndex = 7;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(640, 376);
+            Controls.Add(labelDivider);
             Controls.Add(textBoxMain);
             Controls.Add(buttonAct);
             Controls.Add(textBoxInput);
             Controls.Add(pictureBoxScene);
             Controls.Add(treeViewActions);
             Controls.Add(menuStripMain);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStripMain;
             Name = "FormMain";
             Text = "FormMain";
+            Load += FormMain_Load;
             menuStripMain.ResumeLayout(false);
             menuStripMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).EndInit();
@@ -141,5 +153,6 @@
         private TextBox textBoxInput;
         private Button buttonAct;
         private TextBox textBoxMain;
+        private Label labelDivider;
     }
 }

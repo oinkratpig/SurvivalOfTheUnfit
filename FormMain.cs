@@ -30,6 +30,7 @@ namespace SurvivalOfTheUnfit
         {
             InitializeComponent();
             _formMainInstance = this;
+            this.Select();
 
             // Events
             gameEvents = new GameEvents();
@@ -115,6 +116,10 @@ namespace SurvivalOfTheUnfit
 
         } // end buttonAct_Click
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     } // end class FormMain
 
 } // end namespace
