@@ -16,17 +16,19 @@ namespace SurvivalOfTheUnfit
 
         } // end constructor
 
-        public override void OnActionUpdated(object sender, EventArgs args) { }
+        public override void OnActionUpdated(object sender, EventArgs args)
+        {
+            Enabled = false;
+            if (Inventory.HasEnough(new ItemMysteryMeat(), 1))
+                Enabled = true;
+        
+        } // end OnActionUpdated
 
         public override void OnActionPerformed(string[] args)
         {
-            if (!Inventory.UseItemAndRemove(new ItemMysteryMeat(), 1))
-            {
-                FormMain.AddText("you tried to eat some food.");
-                FormMain.AddText("...if only you had some.");
-            }
+            Inventory.UseItemAndRemove(new ItemMysteryMeat(), 1);
 
-        } // end event OnUpdateAction
+        } // end OnUpdateAction
 
     } // end class ActionEat
 
