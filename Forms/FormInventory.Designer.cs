@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventory));
             panelInventory = new Panel();
             SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             ClientSize = new Size(424, 241);
             Controls.Add(panelInventory);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormInventory";
             Text = "Survival of the Unfit - Inventory";
             FormClosed += FormInventory_FormClosed;

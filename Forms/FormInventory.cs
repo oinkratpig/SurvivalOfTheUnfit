@@ -88,7 +88,7 @@ namespace SurvivalOfTheUnfit
                         x += picture.Size.Width;
                         yToIncrement = Math.Max(yToIncrement, picture.Size.Height);
 
-                        if(x >= panelInventory.Width)
+                        if (x >= panelInventory.Width)
                         {
                             x = INVENTORY_PADDING_HORIZONTAL;
                             y += yToIncrement + INVENTORY_PADDING_VERTICAL;

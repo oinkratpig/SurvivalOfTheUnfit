@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             menuStripMain = new MenuStrip();
             menuItemOptions = new ToolStripMenuItem();
             menuItemOptionsDarkMode = new ToolStripMenuItem();
@@ -176,6 +177,7 @@
             Controls.Add(pictureBoxScene);
             Controls.Add(menuStripMain);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStripMain;
             Name = "FormMain";
             Text = "Survival of the Unfit";
