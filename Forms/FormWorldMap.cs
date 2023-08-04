@@ -31,6 +31,17 @@ namespace SurvivalOfTheUnfit
 
         } // end OnThemeUpdated
 
+        /* Color each table cell in world map */
+        // https://stackoverflow.com/questions/34064499/how-to-set-cell-color-in-tablelayoutpanel-dynamically
+        private void tableWorldMap_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            if ((e.Column + e.Row) % 2 == 1)
+                e.Graphics.FillRectangle(Brushes.Black, e.CellBounds);
+            else
+                e.Graphics.FillRectangle(Brushes.White, e.CellBounds);
+
+        } // end tableWorldMap_CellPaint
+
     } // end class FormWorldMap
 
 } // end namespace

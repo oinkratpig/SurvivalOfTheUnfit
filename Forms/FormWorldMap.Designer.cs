@@ -78,6 +78,7 @@
             tableWorldMap.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableWorldMap.Size = new Size(302, 300);
             tableWorldMap.TabIndex = 0;
+            tableWorldMap.CellPaint += tableWorldMap_CellPaint;
             // 
             // panelHeader
             // 
