@@ -27,6 +27,7 @@ namespace SurvivalOfTheUnfit
 
         private static FormMain _formMainInstance;
         private static FormInventory _formInventoryInstance;
+        private static FormWorldMap _formWorldMapInstance;
 
         /* On startup. */
         public FormMain()
@@ -131,7 +132,7 @@ namespace SurvivalOfTheUnfit
             actionArgs.RemoveAt(0);
 
             // Perform action that was typed
-            if(gameEvents.PerformAction(_formMainInstance.textBoxInput.Text, actionArgs.ToArray()))
+            if (gameEvents.PerformAction(_formMainInstance.textBoxInput.Text, actionArgs.ToArray()))
             {
                 // Update all actions
                 gameEvents.UpdateActions();
@@ -177,6 +178,14 @@ namespace SurvivalOfTheUnfit
             _formInventoryInstance.Show();
 
         } // end menuItemCharacterInventory_Click
+
+        /* Open world map */
+        private void menuItemWorldMap_Click(object sender, EventArgs e)
+        {
+            if (!_formWorldMapInstance.Exists()) _formWorldMapInstance = new FormWorldMap();
+            _formWorldMapInstance.Show();
+
+        } // end menuItemWorldMap_Click
 
     } // end class FormMain
 

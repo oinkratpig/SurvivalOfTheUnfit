@@ -42,6 +42,8 @@
             panelTextBoxInput = new Panel();
             panelActions = new Panel();
             labelActions = new Label();
+            menuItemWorld = new ToolStripMenuItem();
+            menuItemWorldMap = new ToolStripMenuItem();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
             panelTextBoxInput.SuspendLayout();
@@ -50,7 +52,7 @@
             // 
             // menuStripMain
             // 
-            menuStripMain.Items.AddRange(new ToolStripItem[] { menuItemOptions, menuItemCharacter });
+            menuStripMain.Items.AddRange(new ToolStripItem[] { menuItemOptions, menuItemCharacter, menuItemWorld });
             menuStripMain.Location = new Point(0, 0);
             menuStripMain.Name = "menuStripMain";
             menuStripMain.Size = new Size(640, 24);
@@ -83,7 +85,7 @@
             // menuItemCharacterInventory
             // 
             menuItemCharacterInventory.Name = "menuItemCharacterInventory";
-            menuItemCharacterInventory.Size = new Size(124, 22);
+            menuItemCharacterInventory.Size = new Size(180, 22);
             menuItemCharacterInventory.Text = "inventory";
             menuItemCharacterInventory.Click += menuItemCharacterInventory_Click;
             // 
@@ -164,6 +166,20 @@
             labelActions.TabIndex = 2;
             labelActions.Text = "actions";
             // 
+            // menuItemWorld
+            // 
+            menuItemWorld.DropDownItems.AddRange(new ToolStripItem[] { menuItemWorldMap });
+            menuItemWorld.Name = "menuItemWorld";
+            menuItemWorld.Size = new Size(49, 20);
+            menuItemWorld.Text = "world";
+            // 
+            // menuItemWorldMap
+            // 
+            menuItemWorldMap.Name = "menuItemWorldMap";
+            menuItemWorldMap.Size = new Size(180, 22);
+            menuItemWorldMap.Text = "world map";
+            menuItemWorldMap.Click += menuItemWorldMap_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -207,5 +223,7 @@
         private ToolStripMenuItem menuItemCharacterInventory;
         private Panel panelActions;
         private Label labelActions;
+        private ToolStripMenuItem menuItemWorld;
+        private ToolStripMenuItem menuItemWorldMap;
     }
 }
