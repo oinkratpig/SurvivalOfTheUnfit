@@ -109,6 +109,9 @@
             // 
             // buttonSouth
             // 
+            buttonSouth.FlatAppearance.BorderSize = 0;
+            buttonSouth.FlatStyle = FlatStyle.Flat;
+            buttonSouth.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSouth.Location = new Point(149, 374);
             buttonSouth.Name = "buttonSouth";
             buttonSouth.Size = new Size(75, 23);
@@ -118,6 +121,9 @@
             // 
             // buttonWest
             // 
+            buttonWest.FlatAppearance.BorderSize = 0;
+            buttonWest.FlatStyle = FlatStyle.Flat;
+            buttonWest.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonWest.Location = new Point(7, 191);
             buttonWest.Name = "buttonWest";
             buttonWest.Size = new Size(23, 75);
@@ -127,6 +133,9 @@
             // 
             // buttonNorth
             // 
+            buttonNorth.FlatAppearance.BorderSize = 0;
+            buttonNorth.FlatStyle = FlatStyle.Flat;
+            buttonNorth.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonNorth.Location = new Point(149, 39);
             buttonNorth.Name = "buttonNorth";
             buttonNorth.Size = new Size(75, 23);
@@ -136,6 +145,9 @@
             // 
             // buttonEast
             // 
+            buttonEast.FlatAppearance.BorderSize = 0;
+            buttonEast.FlatStyle = FlatStyle.Flat;
+            buttonEast.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonEast.Location = new Point(344, 191);
             buttonEast.Name = "buttonEast";
             buttonEast.Size = new Size(23, 75);
