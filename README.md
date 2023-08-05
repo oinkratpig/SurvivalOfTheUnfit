@@ -7,9 +7,9 @@ Currently lacks many planned features.
 ![preview image](https://i.imgur.com/zaoULjy.png)
 
 Planned features:
-1. Tiled world map the player can traverse. Tiles have different biomes that affect actions in different ways.
+1. Tiled world map the player can traverse at the cost of food/hunger. Tiles have different biomes that affect actions in different ways.
 2. Ability to claim one tile as your home, which can generate unique resources that are only available on that biome.
-3. Random encounters that can happen when performing an action. These are skin to events you can find in Slay the Spire, Peglin, etc. that will reward/punish the player for making certain decisions.
+3. Random encounters that can happen when performing an action and/or moving on the worldmap. These are akin to the events you can find in Slay the Spire, Peglin, FTL, etc. that will reward/punish the player for making certain decisions.
 4. Basic turn-based JRPG combat system.
 5. Character equipment.
 
