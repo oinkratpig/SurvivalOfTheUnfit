@@ -16,9 +16,7 @@ namespace SurvivalOfTheUnfit
             Area1 = 2,
             Area2 = 3,
             Area3 = 4,
-            Area4 = 5,
-            Area5 = 6,
-            Area6 = 7
+            Area4 = 5
         }
 
         /* Get name of biome from type */
@@ -31,9 +29,7 @@ namespace SurvivalOfTheUnfit
                 case Types.Area1:   return "The Seeps";
                 case Types.Area2:   return "Chalks";
                 case Types.Area3:   return "Settled Nothings";
-                case Types.Area4:   return "Coda";
-                case Types.Area5:   return "Hidden Consternations";
-                case Types.Area6:   return "Empty Canvas";
+                case Types.Area4:   return "Hidden Consternations";
                 default:            return "Unknown";
             }
 
@@ -45,13 +41,11 @@ namespace SurvivalOfTheUnfit
             switch (biomeType)
             {
                 case Types.Empty:   return Color.White;
-                case Types.Area0:   return Color.Aqua;
-                case Types.Area1:   return Color.GreenYellow;
-                case Types.Area2:   return Color.Wheat;
-                case Types.Area3:   return Color.Gray;
-                case Types.Area4:   return Color.LightBlue;
-                case Types.Area5:   return Color.Gold;
-                case Types.Area6:   return Color.White;
+                case Types.Area0:   return ColorTranslator.FromHtml("#3c776d");
+                case Types.Area1:   return ColorTranslator.FromHtml("#73945b");
+                case Types.Area2:   return ColorTranslator.FromHtml("#abbd9f");
+                case Types.Area3:   return ColorTranslator.FromHtml("#585f53"); 
+                case Types.Area4:   return ColorTranslator.FromHtml("#131319");
                 default:            return Color.Pink;
             }
 

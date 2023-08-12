@@ -12,14 +12,14 @@ namespace SurvivalOfTheUnfit
         public Color Color { get; private set; }
         public Biome.Types BiomeType { get; private set; }
 
-        public World? map;
+        public World? world;
         public int x;
         public int y;
         public Biome.Types biomeType;
 
-        public Tile(World? map, int x, int y)
+        public Tile(World? world, int x, int y)
         {
-            this.map = map;
+            this.world = world;
             this.x = x;
             this.y = y;
 

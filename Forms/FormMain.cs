@@ -190,7 +190,8 @@ namespace SurvivalOfTheUnfit
         /* Open map editor */
         private void menuItemDebugMapEditor_Click(object sender, EventArgs e)
         {
-
+            FormMapEditor mapEditor = new FormMapEditor();
+            mapEditor.Show();
 
         } // end menuItemDebugMapEditor_Click
 
