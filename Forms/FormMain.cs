@@ -187,6 +187,13 @@ namespace SurvivalOfTheUnfit
 
         } // end menuItemWorldMap_Click
 
+        /* Open map editor */
+        private void menuItemDebugMapEditor_Click(object sender, EventArgs e)
+        {
+
+
+        } // end menuItemDebugMapEditor_Click
+
     } // end class FormMain
 
 } // end namespace

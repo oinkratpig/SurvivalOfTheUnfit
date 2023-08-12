@@ -34,6 +34,8 @@
             menuItemOptionsDarkMode = new ToolStripMenuItem();
             menuItemCharacter = new ToolStripMenuItem();
             menuItemCharacterInventory = new ToolStripMenuItem();
+            menuItemWorld = new ToolStripMenuItem();
+            menuItemWorldMap = new ToolStripMenuItem();
             treeViewActions = new TreeView();
             pictureBoxScene = new PictureBox();
             textBoxInput = new TextBox();
@@ -42,8 +44,8 @@
             panelTextBoxInput = new Panel();
             panelActions = new Panel();
             labelActions = new Label();
-            menuItemWorld = new ToolStripMenuItem();
-            menuItemWorldMap = new ToolStripMenuItem();
+            debugToolStripMenuItem = new ToolStripMenuItem();
+            menuItemDebugMapEditor = new ToolStripMenuItem();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
             panelTextBoxInput.SuspendLayout();
@@ -52,7 +54,7 @@
             // 
             // menuStripMain
             // 
-            menuStripMain.Items.AddRange(new ToolStripItem[] { menuItemOptions, menuItemCharacter, menuItemWorld });
+            menuStripMain.Items.AddRange(new ToolStripItem[] { menuItemOptions, menuItemCharacter, menuItemWorld, debugToolStripMenuItem });
             menuStripMain.Location = new Point(0, 0);
             menuStripMain.Name = "menuStripMain";
             menuStripMain.Size = new Size(640, 24);
@@ -88,6 +90,20 @@
             menuItemCharacterInventory.Size = new Size(180, 22);
             menuItemCharacterInventory.Text = "inventory";
             menuItemCharacterInventory.Click += menuItemCharacterInventory_Click;
+            // 
+            // menuItemWorld
+            // 
+            menuItemWorld.DropDownItems.AddRange(new ToolStripItem[] { menuItemWorldMap });
+            menuItemWorld.Name = "menuItemWorld";
+            menuItemWorld.Size = new Size(49, 20);
+            menuItemWorld.Text = "world";
+            // 
+            // menuItemWorldMap
+            // 
+            menuItemWorldMap.Name = "menuItemWorldMap";
+            menuItemWorldMap.Size = new Size(180, 22);
+            menuItemWorldMap.Text = "world map";
+            menuItemWorldMap.Click += menuItemWorldMap_Click;
             // 
             // treeViewActions
             // 
@@ -166,19 +182,19 @@
             labelActions.TabIndex = 2;
             labelActions.Text = "actions";
             // 
-            // menuItemWorld
+            // debugToolStripMenuItem
             // 
-            menuItemWorld.DropDownItems.AddRange(new ToolStripItem[] { menuItemWorldMap });
-            menuItemWorld.Name = "menuItemWorld";
-            menuItemWorld.Size = new Size(49, 20);
-            menuItemWorld.Text = "world";
+            debugToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuItemDebugMapEditor });
+            debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            debugToolStripMenuItem.Size = new Size(53, 20);
+            debugToolStripMenuItem.Text = "debug";
             // 
-            // menuItemWorldMap
+            // menuItemDebugMapEditor
             // 
-            menuItemWorldMap.Name = "menuItemWorldMap";
-            menuItemWorldMap.Size = new Size(180, 22);
-            menuItemWorldMap.Text = "world map";
-            menuItemWorldMap.Click += menuItemWorldMap_Click;
+            menuItemDebugMapEditor.Name = "menuItemDebugMapEditor";
+            menuItemDebugMapEditor.Size = new Size(180, 22);
+            menuItemDebugMapEditor.Text = "map editor";
+            menuItemDebugMapEditor.Click += menuItemDebugMapEditor_Click;
             // 
             // FormMain
             // 
@@ -225,5 +241,7 @@
         private Label labelActions;
         private ToolStripMenuItem menuItemWorld;
         private ToolStripMenuItem menuItemWorldMap;
+        private ToolStripMenuItem debugToolStripMenuItem;
+        private ToolStripMenuItem menuItemDebugMapEditor;
     }
 }
