@@ -11,19 +11,14 @@ namespace SurvivalOfTheUnfit
     {
         public Color Color { get; private set; }
         public Biome.Types BiomeType { get; private set; }
-
-        public World? world;
-        public int x;
-        public int y;
-        public Biome.Types biomeType;
+        public Point Location { get; private set; }
+        public World? World { get; private set; }
 
         public Tile(World? world, int x, int y)
         {
-            this.world = world;
-            this.x = x;
-            this.y = y;
-
-            biomeType = Biome.Types.Empty;
+            World = world;
+            Location = new Point(x, y);
+            BiomeType = Biome.Types.Empty;
 
         } // end constructor
 

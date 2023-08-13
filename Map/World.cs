@@ -1,8 +1,10 @@
-﻿using System;
+﻿using SurvivalOfTheUnfit.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace SurvivalOfTheUnfit
 {
@@ -10,6 +12,10 @@ namespace SurvivalOfTheUnfit
     /* Grid where (0,0) = top-left. */
     public class World
     {
+        public static World? CurrentWorld { get; private set; }
+        public static Tile? CurrentTile { get; private set; }
+        public static Point CurrentLocation { get; private set; }
+
         public int Width { get; private set; }
         public int Height { get; private set; }
         public Tile[,]? Map { get; private set; }
@@ -25,30 +31,53 @@ namespace SurvivalOfTheUnfit
 
         } // end constructor
 
-        /*
-        // Resize a TableLayoutPanel to match given World
-        public static void UpdateWorldMapTable(TableLayoutPanel table, World world)
+        /* Create a World instance from a bitmap image */
+        public static World CreateFromBitmap(Bitmap bitmap)
         {
-            table.RowStyles.Clear();
-            table.ColumnStyles.Clear();
+            Bitmap pixelMap = Resources.sprPixelWorldMap;
 
-            table.RowCount = world.Width;
-            table.ColumnCount = world.Height;
+            int width = pixelMap.Width;
+            int height = pixelMap.Height;
+            World world = new World(width, height);
 
-            table.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            for (int x = 0; x < world.Map.GetLength(0); x++)
+                for (int y = 0; y < world.Map.GetLength(1); y++)
+                {
+                    Tile newTile = new Tile(world, x, y);
+                    Color pixelColor = pixelMap.GetPixel(x, y);
+                    foreach (Biome.Types biomeType in Enum.GetValues(typeof(Biome.Types)))
+                        if (Biome.GetColor(biomeType) == pixelColor)
+                        {
+                            newTile.SetBiome(biomeType);
+                            break;
+                        }
+                    world.Map[x, y] = newTile;
+                }
 
-            int cellWidth = table.Size.Width / (world.Width + 1) + 1; // extra +1 at end is to compensate for cell borders
-            int cellHeight = table.Size.Height / (world.Height + 1) + 1;
+            return world;
+        }
 
-            table.Size = new Size((cellWidth + 1) * world.Width, (cellHeight + 1) * world.Height);
+        /* Sets new current world */
+        public static void SetCurrentWorld(World newWorld)
+        {
+            if (newWorld == null || newWorld.Map == null)
+                return;
 
-            for (int i = 0; i < world.Width; i++)
-                table.RowStyles.Add(new RowStyle(SizeType.Absolute, cellWidth));
-            for (int i = 0; i < world.Height; i++)
-                table.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, cellHeight));
+            CurrentWorld = newWorld;
+            SetCurrentTile(0, 0);
 
-        } // end UpdateWorldMapTable
-        */
+        } // end SetCurrentWorld
+
+        /* Change the current tile */
+        public static void SetCurrentTile(int x, int y)
+        {
+            if (CurrentWorld == null || CurrentWorld.Map == null)
+                return;
+
+            CurrentLocation = new Point(x, y);
+            CurrentTile = CurrentWorld.Map[x, y];
+
+        } // end SetCurrentTile
 
     } // end class World
 

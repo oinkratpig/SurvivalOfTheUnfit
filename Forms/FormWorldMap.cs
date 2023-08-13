@@ -12,6 +12,12 @@ namespace SurvivalOfTheUnfit
 {
     public partial class FormWorldMap : Form
     {
+        private const int MARGIN_H = 20; // horizontal margin for left and right
+        private const int MARGIN_V = 20; // vertical margin for top and bottom
+
+        private const int POSITION_MARKER_OFFSET_X = -17;
+        private const int POSITION_MARKER_OFFSET_Y = -14;
+
         public FormWorldMap()
         {
             InitializeComponent();
@@ -19,6 +25,14 @@ namespace SurvivalOfTheUnfit
             // Theme
             ColorTheme.ThemeUpdated += OnThemeUpdated;
             ColorTheme.UpdateFormThemes();
+
+            // Add margins to map
+            pictureBoxMap.Size = new Size(pictureBoxMap.Size.Width + MARGIN_H * 2, pictureBoxMap.Size.Height + MARGIN_V * 2);
+            pictureBoxMap.Location = new Point(pictureBoxMap.Location.X - MARGIN_H, pictureBoxMap.Location.Y - MARGIN_V);
+
+            // Position Marker
+            pictureBoxPositionMarker.Parent = pictureBoxMap;
+            UpdatePositionMarker();
 
             this.Select();
 
@@ -28,19 +42,25 @@ namespace SurvivalOfTheUnfit
         public void OnThemeUpdated(object sender, EventArgs e)
         {
             ColorTheme.ApplyFormTheme(this, ColorTheme.CurrentTheme);
+            pictureBoxMap.BackColor = Color.Transparent;
+            pictureBoxPositionMarker.BackColor = Color.Transparent;
 
         } // end OnThemeUpdated
 
-        /* Color each table cell in world map */
-        // https://stackoverflow.com/questions/34064499/how-to-set-cell-color-in-tablelayoutpanel-dynamically
-        private void tableWorldMap_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        /* Update position of position marker */
+        public void UpdatePositionMarker()
         {
-            if ((e.Column + e.Row) % 2 == 1)
-                e.Graphics.FillRectangle(Brushes.Black, e.CellBounds);
-            else
-                e.Graphics.FillRectangle(Brushes.White, e.CellBounds);
+            // Position of marker
+            int x = MARGIN_H + pictureBoxMap.Width * (World.CurrentLocation.X / World.CurrentWorld.Width);
+            int y = MARGIN_V + pictureBoxMap.Height * (World.CurrentLocation.Y / World.CurrentWorld.Height);
 
-        } // end tableWorldMap_CellPaint
+            // Center marker
+            x += POSITION_MARKER_OFFSET_X;
+            y += POSITION_MARKER_OFFSET_Y;
+
+            pictureBoxPositionMarker.Location = new Point(x, y);
+
+        } // end UpdatePositionMarker
 
     } // end class FormWorldMap
 

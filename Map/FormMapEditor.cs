@@ -70,7 +70,7 @@ namespace SurvivalOfTheUnfit
                     foreach (Biome.Types biomeType in Enum.GetValues(typeof(Biome.Types)))
                         if (Biome.GetColor(biomeType) == pixelColor)
                         {
-                            newTile.biomeType = biomeType;
+                            newTile.SetBiome(biomeType);
                             break;
                         }
                     _world.Map[x, y] = newTile;
@@ -89,9 +89,9 @@ namespace SurvivalOfTheUnfit
                 _selectedY = Math.Clamp(_selectedY, 0, _height - 1);
                 _selectedTile = _world.Map[_selectedX, _selectedY];
 
-                textBoxBiomeName.Text = Biome.GetName(_selectedTile.biomeType);
+                textBoxBiomeName.Text = Biome.GetName(_selectedTile.BiomeType);
 
-                Color color = Biome.GetColor(_selectedTile.biomeType);
+                Color color = Biome.GetColor(_selectedTile.BiomeType);
                 textBoxColor.Text = $"rgb({color.R},{color.G},{color.B})";
 
                 UpdatePositionMarker();

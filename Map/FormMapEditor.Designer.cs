@@ -153,8 +153,7 @@
             // 
             // pictureBoxMap
             // 
-            pictureBoxMap.BackColor = Color.Transparent;
-            pictureBoxMap.Image = Properties.Resources.sprWorldMap;
+            pictureBoxMap.BackColor = Color.Black;
             pictureBoxMap.Location = new Point(12, 74);
             pictureBoxMap.Name = "pictureBoxMap";
             pictureBoxMap.Size = new Size(200, 200);
@@ -164,9 +163,8 @@
             // 
             // pictureBoxX
             // 
-            pictureBoxX.BackColor = Color.Transparent;
+            pictureBoxX.BackColor = Color.Red;
             pictureBoxX.BackgroundImageLayout = ImageLayout.None;
-            pictureBoxX.Image = Properties.Resources.sprWorldMapX;
             pictureBoxX.Location = new Point(99, 154);
             pictureBoxX.Name = "pictureBoxX";
             pictureBoxX.Size = new Size(21, 27);
@@ -177,7 +175,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(689, 508);
+            ClientSize = new Size(431, 287);
             Controls.Add(pictureBoxX);
             Controls.Add(labelColor);
             Controls.Add(textBoxColor);
