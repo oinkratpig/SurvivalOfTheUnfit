@@ -48,6 +48,7 @@ namespace SurvivalOfTheUnfit
 
             // Create world
             World.SetCurrentWorld(World.CreateFromBitmap(Resources.sprPixelWorldMap));
+            World.SetCurrentTile(29, 20);
 
             // Instantiate all classes to instantiate on load
             InstantiateOnStart.InstantiateAll();
@@ -190,14 +191,6 @@ namespace SurvivalOfTheUnfit
             _formWorldMapInstance.Show();
 
         } // end menuItemWorldMap_Click
-
-        /* Open map editor */
-        private void menuItemDebugMapEditor_Click(object sender, EventArgs e)
-        {
-            FormMapEditor mapEditor = new FormMapEditor();
-            mapEditor.Show();
-
-        } // end menuItemDebugMapEditor_Click
 
     } // end class FormMain
 

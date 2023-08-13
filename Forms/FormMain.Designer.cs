@@ -44,8 +44,6 @@
             panelTextBoxInput = new Panel();
             panelActions = new Panel();
             labelActions = new Label();
-            debugToolStripMenuItem = new ToolStripMenuItem();
-            menuItemDebugMapEditor = new ToolStripMenuItem();
             menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxScene).BeginInit();
             panelTextBoxInput.SuspendLayout();
@@ -54,7 +52,7 @@
             // 
             // menuStripMain
             // 
-            menuStripMain.Items.AddRange(new ToolStripItem[] { menuItemOptions, menuItemCharacter, menuItemWorld, debugToolStripMenuItem });
+            menuStripMain.Items.AddRange(new ToolStripItem[] { menuItemOptions, menuItemCharacter, menuItemWorld });
             menuStripMain.Location = new Point(0, 0);
             menuStripMain.Name = "menuStripMain";
             menuStripMain.Size = new Size(640, 24);
@@ -72,7 +70,7 @@
             // menuItemOptionsDarkMode
             // 
             menuItemOptionsDarkMode.Name = "menuItemOptionsDarkMode";
-            menuItemOptionsDarkMode.Size = new Size(131, 22);
+            menuItemOptionsDarkMode.Size = new Size(180, 22);
             menuItemOptionsDarkMode.Text = "dark mode";
             menuItemOptionsDarkMode.Click += menuItemOptionsDarkMode_Click;
             // 
@@ -87,7 +85,7 @@
             // menuItemCharacterInventory
             // 
             menuItemCharacterInventory.Name = "menuItemCharacterInventory";
-            menuItemCharacterInventory.Size = new Size(180, 22);
+            menuItemCharacterInventory.Size = new Size(124, 22);
             menuItemCharacterInventory.Text = "inventory";
             menuItemCharacterInventory.Click += menuItemCharacterInventory_Click;
             // 
@@ -101,7 +99,7 @@
             // menuItemWorldMap
             // 
             menuItemWorldMap.Name = "menuItemWorldMap";
-            menuItemWorldMap.Size = new Size(180, 22);
+            menuItemWorldMap.Size = new Size(131, 22);
             menuItemWorldMap.Text = "world map";
             menuItemWorldMap.Click += menuItemWorldMap_Click;
             // 
@@ -182,20 +180,6 @@
             labelActions.TabIndex = 2;
             labelActions.Text = "actions";
             // 
-            // debugToolStripMenuItem
-            // 
-            debugToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuItemDebugMapEditor });
-            debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-            debugToolStripMenuItem.Size = new Size(53, 20);
-            debugToolStripMenuItem.Text = "debug";
-            // 
-            // menuItemDebugMapEditor
-            // 
-            menuItemDebugMapEditor.Name = "menuItemDebugMapEditor";
-            menuItemDebugMapEditor.Size = new Size(180, 22);
-            menuItemDebugMapEditor.Text = "map editor";
-            menuItemDebugMapEditor.Click += menuItemDebugMapEditor_Click;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -241,7 +225,5 @@
         private Label labelActions;
         private ToolStripMenuItem menuItemWorld;
         private ToolStripMenuItem menuItemWorldMap;
-        private ToolStripMenuItem debugToolStripMenuItem;
-        private ToolStripMenuItem menuItemDebugMapEditor;
     }
 }

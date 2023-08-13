@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
@@ -15,6 +16,7 @@ namespace SurvivalOfTheUnfit
         public static World? CurrentWorld { get; private set; }
         public static Tile? CurrentTile { get; private set; }
         public static Point CurrentLocation { get; private set; }
+        public static event EventHandler? TileUpdated;
 
         public int Width { get; private set; }
         public int Height { get; private set; }
@@ -30,6 +32,15 @@ namespace SurvivalOfTheUnfit
                     Map[x, y] = new Tile(this, x, y);
 
         } // end constructor
+
+        /* Tile updated event */
+        public static void TileChanged()
+        {
+            if (TileUpdated == null) return;
+
+            TileUpdated.Invoke(null, EventArgs.Empty);
+
+        } // end OnTileChanged
 
         /* Create a World instance from a bitmap image */
         public static World CreateFromBitmap(Bitmap bitmap)
@@ -74,8 +85,12 @@ namespace SurvivalOfTheUnfit
             if (CurrentWorld == null || CurrentWorld.Map == null)
                 return;
 
+            x = Math.Clamp(x, 0, CurrentWorld.Width - 1);
+            y = Math.Clamp(y, 0, CurrentWorld.Height - 1);
+
             CurrentLocation = new Point(x, y);
             CurrentTile = CurrentWorld.Map[x, y];
+            TileChanged();
 
         } // end SetCurrentTile
 

@@ -26,19 +26,18 @@ namespace SurvivalOfTheUnfit
             ColorTheme.ThemeUpdated += OnThemeUpdated;
             ColorTheme.UpdateFormThemes();
 
-            // Add margins to map
+            // Map
             pictureBoxMap.Size = new Size(pictureBoxMap.Size.Width + MARGIN_H * 2, pictureBoxMap.Size.Height + MARGIN_V * 2);
             pictureBoxMap.Location = new Point(pictureBoxMap.Location.X - MARGIN_H, pictureBoxMap.Location.Y - MARGIN_V);
-
-            // Position Marker
             pictureBoxPositionMarker.Parent = pictureBoxMap;
-            UpdatePositionMarker();
+            World.TileUpdated += OnTileChanged;
+            OnTileChanged(this, EventArgs.Empty);
 
             this.Select();
 
         } // end FormWorldMap
 
-        /* Whenever the color theme is changed. */
+        /* Whenever the color theme is changed */
         public void OnThemeUpdated(object sender, EventArgs e)
         {
             ColorTheme.ApplyFormTheme(this, ColorTheme.CurrentTheme);
@@ -51,8 +50,10 @@ namespace SurvivalOfTheUnfit
         public void UpdatePositionMarker()
         {
             // Position of marker
-            int x = MARGIN_H + pictureBoxMap.Width * (World.CurrentLocation.X / World.CurrentWorld.Width);
-            int y = MARGIN_V + pictureBoxMap.Height * (World.CurrentLocation.Y / World.CurrentWorld.Height);
+            int width = pictureBoxMap.Width - MARGIN_H * 2;
+            int height = pictureBoxMap.Height - MARGIN_V * 2;
+            int x = (int)(MARGIN_H + width * ((float)World.CurrentLocation.X / World.CurrentWorld.Width));
+            int y = (int)(MARGIN_V + height * ((float)World.CurrentLocation.Y / World.CurrentWorld.Height));
 
             // Center marker
             x += POSITION_MARKER_OFFSET_X;
@@ -61,6 +62,49 @@ namespace SurvivalOfTheUnfit
             pictureBoxPositionMarker.Location = new Point(x, y);
 
         } // end UpdatePositionMarker
+
+        /* On dispose */
+        public void OnDispose(object sender, EventArgs e)
+        {
+            World.TileUpdated -= OnTileChanged;
+
+        } // end OnDispose
+
+        /* Whenever a tile is changed */
+        private void OnTileChanged(object? sender, EventArgs e)
+        {
+            UpdatePositionMarker();
+            labelBiome.Text = Biome.GetName(World.CurrentTile.BiomeType);
+
+        } // end OnTileChanged
+
+        /* Move up/north */
+        private void buttonNorth_Click(object sender, EventArgs e)
+        {
+            World.SetCurrentTile(World.CurrentLocation.X, World.CurrentLocation.Y - 1);
+
+        } // end buttonNorth_Click
+
+        /* Move right/east */
+        private void buttonEast_Click(object sender, EventArgs e)
+        {
+            World.SetCurrentTile(World.CurrentLocation.X + 1, World.CurrentLocation.Y);
+
+        } // end buttonEast_Click
+
+        /* Move down/south */
+        private void buttonSouth_Click(object sender, EventArgs e)
+        {
+            World.SetCurrentTile(World.CurrentLocation.X, World.CurrentLocation.Y + 1);
+
+        } // end buttonSouth_Click
+
+        /* Move left/west */
+        private void buttonWest_Click(object sender, EventArgs e)
+        {
+            World.SetCurrentTile(World.CurrentLocation.X - 1, World.CurrentLocation.Y);
+
+        } // end buttonWest_Click
 
     } // end class FormWorldMap
 

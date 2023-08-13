@@ -71,6 +71,7 @@
             buttonSouth.TabIndex = 2;
             buttonSouth.Text = "v";
             buttonSouth.UseVisualStyleBackColor = true;
+            buttonSouth.Click += buttonSouth_Click;
             // 
             // buttonWest
             // 
@@ -83,6 +84,7 @@
             buttonWest.TabIndex = 3;
             buttonWest.Text = "<";
             buttonWest.UseVisualStyleBackColor = true;
+            buttonWest.Click += buttonWest_Click;
             // 
             // buttonNorth
             // 
@@ -95,6 +97,7 @@
             buttonNorth.TabIndex = 4;
             buttonNorth.Text = "^";
             buttonNorth.UseVisualStyleBackColor = true;
+            buttonNorth.Click += buttonNorth_Click;
             // 
             // buttonEast
             // 
@@ -107,6 +110,7 @@
             buttonEast.TabIndex = 5;
             buttonEast.Text = ">";
             buttonEast.UseVisualStyleBackColor = true;
+            buttonEast.Click += buttonEast_Click;
             // 
             // pictureBoxMap
             // 
@@ -141,6 +145,7 @@
             Controls.Add(buttonSouth);
             Controls.Add(panelHeader);
             Controls.Add(pictureBoxMap);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormWorldMap";
             Text = "Survival of the Unfit - World Map";
