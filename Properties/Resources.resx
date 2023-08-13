@@ -122,15 +122,24 @@
     <value>..\Assets\Sounds\sndSelect.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="sprItemMeat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\sprItemMeat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Assets\Images\Items\sprItemMeat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sprItemRocks" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\sprItemRocks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Assets\Images\Items\sprItemRocks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sprItemStick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\sprItemStick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Assets\Images\Items\sprItemStick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sprItemUnknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Images\sprItemUnknown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Assets\Images\Items\sprItemUnknown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sprMapPositionMarker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Images\World Map\sprMapPositionMarker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sprPixelWorldMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Images\World Map\sprPixelWorldMap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sprWorldMapLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Images\World Map\sprWorldMapLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SurvivalOfTheUnfit.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +45,10 @@ namespace SurvivalOfTheUnfit
 
             // Events
             gameEvents = new GameEvents();
+
+            // Create world
+            World.SetCurrentWorld(World.CreateFromBitmap(Resources.sprPixelWorldMap));
+            World.SetCurrentTile(29, 20);
 
             // Instantiate all classes to instantiate on load
             InstantiateOnStart.InstantiateAll();
